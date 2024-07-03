@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import argparse
-from os import environ as env
 from glob import glob as ls
 from os.path import expanduser as xpuser
 from os import system as sh
@@ -37,7 +36,7 @@ def main():
             file.write('$WALLPAPER = ' + args.d + '/' + args.f)
             file.close()
             sh("swww img "+filepath+" --transition-step 10 --transition-type any")
-            sh("wal -i "+filepath)
+            sh("wal --cols16 -i "+filepath)
             sh("hyprctl reload")
             sh("pywal-discord -p ~/.config/vesktop/themes")
             sh("pywalfox update")
