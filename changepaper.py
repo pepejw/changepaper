@@ -36,9 +36,9 @@ def main():
             file.write('$WALLPAPER = ' + args.d + '/' + args.f)
             file.close()
             sh("swww img "+filepath+" --transition-step 10 --transition-type any")
-            sh("wal --cols16 -i "+filepath)
+            sh("wal --cols16 -n -q -i "+filepath)
             sh("hyprctl reload")
-            sh("pywal-discord -p ~/.config/vesktop/themes")
+            sh("pywal-discord -p ~/.var/app/dev.vencord.Vesktop/config/vesktop/themes")
             sh("pywalfox update")
 if __name__ == '__main__':
     main()
