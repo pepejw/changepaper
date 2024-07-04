@@ -28,13 +28,6 @@ def main():
             if file == filepath:
                valid = True
         if valid == True:
-            try:
-                file = open(xpuser('~/.config/hypr/wallpaper.conf'), 'w')
-            except:
-                print('~/.config/hypr/ does not exist. Is hyprland installed?')
-                quit()
-            file.write('$WALLPAPER = ' + args.d + '/' + args.f)
-            file.close()
             sh("swww img "+filepath+" --transition-step 10 --transition-type any")
             sh("wal --cols16 -n -q -i "+filepath)
             sh("hyprctl reload")
